@@ -12,14 +12,10 @@ namespace DelegatePractice
         static void Main(string[] args)
         {
             
-            FirstDelegate d1 = new FirstDelegate(DelegateTest.StaticMethod);
+            DelegateTest t= new DelegateTest(); 
 
-            DelegateTest instance = new DelegateTest(); 
-            instance.name = "My Intance";
-            FirstDelegate d2 = new FirstDelegate(instance.InstanceMethod); 
-
-            Console.WriteLine(d1(10)); 
-            Console.WriteLine(d2(5));
+            t.MyEvent += new EventHandler(t.DoNothing); 
+            t.MyEvent -= null; 
 
         }
 
@@ -29,6 +25,21 @@ namespace DelegatePractice
 
         string InstanceMethod(int i){
             return string.Format("{0}: {1}", name, i); 
+        }
+
+        public event EventHandler MyEvent
+        {
+            add {
+                Console.WriteLine("Add operation"); 
+            }
+
+            remove {
+                Console.WriteLine ("remove operation"); 
+            }
+        }
+
+        void DoNothing (object sender, EventArgs e){
+
         }
     }
 }
