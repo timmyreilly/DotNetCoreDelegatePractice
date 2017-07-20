@@ -1,0 +1,4 @@
+7/20/2017 3:30:46 PM	Warning	Console	This is a warning message
+7/20/2017 3:30:46 PM	Warning	Console	This is a warning message
+7/20/2017 3:30:46 PM	Information	Console	Information message two
+7/20/2017 3:30:46 PM	Information	Console	Information message two
