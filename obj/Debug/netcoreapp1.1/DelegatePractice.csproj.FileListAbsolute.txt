@@ -1,0 +1,8 @@
+C:\Users\tireilly\Desktop\DelegatePractice\bin\Debug\netcoreapp1.1\DelegatePractice.deps.json
+C:\Users\tireilly\Desktop\DelegatePractice\bin\Debug\netcoreapp1.1\DelegatePractice.runtimeconfig.json
+C:\Users\tireilly\Desktop\DelegatePractice\bin\Debug\netcoreapp1.1\DelegatePractice.runtimeconfig.dev.json
+C:\Users\tireilly\Desktop\DelegatePractice\bin\Debug\netcoreapp1.1\DelegatePractice.dll
+C:\Users\tireilly\Desktop\DelegatePractice\bin\Debug\netcoreapp1.1\DelegatePractice.pdb
+C:\Users\tireilly\Desktop\DelegatePractice\obj\Debug\netcoreapp1.1\DelegatePractice.AssemblyInfo.cs
+C:\Users\tireilly\Desktop\DelegatePractice\obj\Debug\netcoreapp1.1\DelegatePractice.dll
+C:\Users\tireilly\Desktop\DelegatePractice\obj\Debug\netcoreapp1.1\DelegatePractice.pdb
