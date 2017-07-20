@@ -2,10 +2,22 @@ using System;
 
 namespace DelegatePractice{
 
+    public class TimeOfTick : EventArgs
+    {
+        private DateTime TimeNow; 
+        public DateTime Time {
+            set {
+                TimeNow = value; 
+            }
+            get{
+                return this.TimeNow; 
+            }
+        }
+    }
+
     public class Metronome{
         public event TickHandler Tick; 
-        public EventArgs e = null; 
-        public delegate void TickHandler(Metronome m, EventArgs e);
+        public delegate void TickHandler(Metronome m, TimeOfTick e);
         public void Start()
         {
             while (true)
@@ -13,7 +25,9 @@ namespace DelegatePractice{
                 System.Threading.Thread.Sleep(3000);
                 if(Tick != null)
                 {
-                    Tick(this, e); 
+                    TimeOfTick TOT = new TimeOfTick(); 
+                    TOT.Time = DateTime.Now; 
+                    Tick(this, TOT); 
                 }
             }
         }
@@ -25,9 +39,9 @@ namespace DelegatePractice{
         {
             m.Tick += new Metronome.TickHandler(HeardIt);
         }
-        private void HeardIt(Metronome m, EventArgs e)
+        private void HeardIt(Metronome m, TimeOfTick e)
         {
-            Console.WriteLine("HEARD IT"); 
+            Console.WriteLine("HEARD IT AT {0}", e.Time); 
         }
     }
 
