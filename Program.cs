@@ -8,7 +8,7 @@ namespace DelegatePractice
             Console.WriteLine(message); 
         }
 
-        public static void NotMain(string[] args)
+        public static void MainOne(string[] args)
         {
             Logger.WriteMessage += LogToConsole; 
 

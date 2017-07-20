@@ -11,7 +11,7 @@ namespace DelegatePractice
     class ProgramTwo 
     {
 
-        public static void Main(string[] args)
+        public static void MainTwo(string[] args)
         {
             var lister = new FileSearcher(); 
             int filesFound = 0; 
