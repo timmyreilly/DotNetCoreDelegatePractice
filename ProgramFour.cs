@@ -10,7 +10,7 @@ namespace DelegatePractice
 
         static bool LessThanFive(int n) { return n < 5; }
         static bool GreaterThanThirteen(int n) { return n > 13; }
-        static void Main()
+        static void MainFour()
         {
 
             int[] numbers = new[] { 2, 4, 14, 235, 3, 1, 3, 6, 1 }; 
