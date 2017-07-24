@@ -46,7 +46,7 @@ namespace DelegatePractice{
     }
 
     class Test{
-        static void Main(){
+        static void MainThree(){
             Metronome m = new Metronome();
             Listener l = new Listener(); 
             l.Subscribe(m); 
