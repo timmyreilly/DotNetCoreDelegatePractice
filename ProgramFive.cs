@@ -28,12 +28,28 @@ namespace DelegatePricate
             d += ReturnTwentyTwo; 
             // int value = d(); 
 
+            Func<int, bool> f = TakeAnIntAndReturnABool;
+
+            Action<int> a= GetString; 
+
+            a(5); 
+
+            Console.WriteLine(f(5)); 
+
             foreach(int i in GetAllReturnValues<int>(d)){
                 Console.WriteLine(i);
             }
             //Console.WriteLine(value); 
 
 
+        }
+
+        static void GetString(int a){
+            Console.WriteLine($"Hello world {a}"); 
+        }
+
+        static bool TakeAnIntAndReturnABool(int a){
+            return true; 
         }
 
         static IEnumerable<T> GetAllReturnValues<T>(Func<T> d){
