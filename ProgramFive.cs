@@ -21,7 +21,7 @@ namespace DelegatePricate
         static void Goo() { Console.WriteLine("Goo()"); }
         static void Sue() { Console.WriteLine("Sue()"); }
 
-        static void Main()
+        static void MainB()
         {
             Func<int> d = ReturnFive; 
             d += ReturnTen; 
@@ -60,7 +60,22 @@ namespace DelegatePricate
         static int ReturnFive() { return 5; }
         static int ReturnTen() {return 10; }
         static int ReturnTwentyTwo() {return 22; }
+
+
+        static bool asdf(int i){
+            return i > 5; 
+        }
+        static void Main()
+        {
+            Func<int, bool> funcAnonymous = delegate(int i) {return  i > 5; }; 
+            Func<int, bool> funcLambda = (int i) =>  i > 5;
+
+            Console.WriteLine(funcAnonymous(3)); 
+            Console.WriteLine(funcLambda(7)); 
+        }
         
+
+
     }
 
 
