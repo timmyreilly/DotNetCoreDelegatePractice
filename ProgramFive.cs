@@ -5,7 +5,7 @@ namespace DelegatePricate
 {
 
     delegate void MeDelegate();
-    delegate int AnotherDelegate(); 
+    delegate T AnotherDelegate<T>(); 
     class MainClassTwo
     {
         static void MainA()
@@ -23,21 +23,22 @@ namespace DelegatePricate
 
         static void Main()
         {
-            AnotherDelegate d = ReturnFive; 
+            AnotherDelegate<int> d = ReturnFive; 
             d += ReturnTen; 
             d += ReturnTwentyTwo; 
             // int value = d(); 
 
-            List<int> ints = new List<int>(); 
-            foreach(AnotherDelegate del in d.GetInvocationList())
-                ints.Add(del()); 
-
-            foreach(int i in ints){
+            foreach(int i in GetAllReturnValues<int>(d)){
                 Console.WriteLine(i);
             }
             //Console.WriteLine(value); 
 
 
+        }
+
+        static IEnumerable<T> GetAllReturnValues<T>(AnotherDelegate<T> d){
+            foreach(AnotherDelegate<T> del in d.GetInvocationList())
+                yield return del(); 
         }
 
         static int ReturnFive() { return 5; }
