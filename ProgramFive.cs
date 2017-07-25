@@ -23,7 +23,7 @@ namespace DelegatePricate
 
         static void Main()
         {
-            AnotherDelegate<int> d = ReturnFive; 
+            Func<int> d = ReturnFive; 
             d += ReturnTen; 
             d += ReturnTwentyTwo; 
             // int value = d(); 
@@ -36,8 +36,8 @@ namespace DelegatePricate
 
         }
 
-        static IEnumerable<T> GetAllReturnValues<T>(AnotherDelegate<T> d){
-            foreach(AnotherDelegate<T> del in d.GetInvocationList())
+        static IEnumerable<T> GetAllReturnValues<T>(Func<T> d){
+            foreach(Func<T> del in d.GetInvocationList())
                 yield return del(); 
         }
 
