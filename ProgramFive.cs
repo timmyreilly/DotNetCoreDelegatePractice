@@ -65,7 +65,7 @@ namespace DelegatePricate
         static bool asdf(int i){
             return i > 5; 
         }
-        static void Main()
+        static void MainC()
         {
             Func<int, bool> funcAnonymous = delegate(int i) {return  i > 5; }; 
             Func<int, bool> funcLambda = (int i) =>  i > 5;
