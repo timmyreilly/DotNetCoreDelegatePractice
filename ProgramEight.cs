@@ -1,10 +1,25 @@
 using System;
+using System.Collections.Generic; 
 
+
+public enum CowState
+{
+    Awake, Sleeping, Dead
+}
+
+class CowTippedEventArgs : EventArgs
+{
+    public CowState CurrentCowState {get; private set;}
+    public CowTippedEventArgs(CowState currentState)
+    {
+        CurrentCowState = currentState; 
+    }
+}
 class Cow
 {
     private Action mooing;
     public string Name {get; set;}
-    public EventHandler Coo; 
+    public EventHandler<CowTippedEventArgs> Coo; 
     public event Action Mooing
     {
         add {
@@ -27,8 +42,9 @@ class Cow
     }
 
     public void BeTippedOver(){
+        // Logic... current state of the cow. 
         if(Coo != null){
-            Coo(this, EventArgs.Empty);
+            Coo(this, new CowTippedEventArgs(CowState.Awake));
         }
     }
 
@@ -55,8 +71,21 @@ class MainClassFive
     }
 
     // This is an event handler  
-    static void Gigg(object sender, EventArgs e){
+    static void Gigg(object sender, CowTippedEventArgs e){
         Cow c = sender as Cow; 
+
         Console.WriteLine("Gig gig. we made " + c.Name + " moo!"); 
+
+        switch(e.CurrentCowState){
+            case CowState.Awake:
+                Console.WriteLine("Run!");
+                break;
+            case CowState.Sleeping:
+                Console.WriteLine("Tickle it");
+                break;
+            case CowState.Dead:
+                Console.WriteLine("Butcher it"); 
+                break;
+        }
     }
 }
