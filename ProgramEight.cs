@@ -52,7 +52,7 @@ class Cow
 
 class MainClassFive
 {
-    static void Main()
+    static void MainA()
     {
         Cow c = new Cow();
         c.Mooing += () => Console.WriteLine("Giggle"); 
