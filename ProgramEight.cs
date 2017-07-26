@@ -3,6 +3,8 @@ using System;
 class Cow
 {
     private Action mooing;
+    public string Name {get; set;}
+    public EventHandler Coo; 
     public event Action Mooing
     {
         add {
@@ -24,6 +26,12 @@ class Cow
         }
     }
 
+    public void BeTippedOver(){
+        if(Coo != null){
+            Coo(this, EventArgs.Empty);
+        }
+    }
+
 }
 
 class MainClassFive
@@ -34,5 +42,21 @@ class MainClassFive
         c.Mooing += () => Console.WriteLine("Giggle"); 
 
         c.PushSleepingCow(); 
+
+        Cow c1 = new Cow{Name = "Betsy"};
+        c1.Coo += Gigg; 
+        Cow c2 = new Cow{Name = "Georgie"};
+        c2.Coo += Gigg; 
+
+        Cow victum = new Random().Next() % 2 == 0 ? c1 : c2; 
+
+        victum.BeTippedOver(); 
+        
+    }
+
+    // This is an event handler  
+    static void Gigg(object sender, EventArgs e){
+        Cow c = sender as Cow; 
+        Console.WriteLine("Gig gig. we made " + c.Name + " moo!"); 
     }
 }
