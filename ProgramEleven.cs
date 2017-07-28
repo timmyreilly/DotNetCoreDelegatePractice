@@ -12,7 +12,7 @@ class MainEleven
 
     }
     
-    static void Main(){
+    static void MainA(){
         foreach(int num in GetRandomNumbers(10)){
             Console.WriteLine(num); 
         }
