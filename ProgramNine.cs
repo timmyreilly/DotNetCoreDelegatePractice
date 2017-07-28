@@ -57,7 +57,7 @@ class MainClassNine
 {
 
 
-    static void Main()
+    static void MainB()
     {
 
     }

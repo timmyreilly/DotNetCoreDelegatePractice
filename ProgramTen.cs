@@ -27,7 +27,7 @@ class MainTen2{
     static Derived ReturnsDerived() { return null; } 
 
 
-    static void Main()
+    static void MainB()
     {
         ReturnsBaseDelegate b; 
         b = ReturnsBase; 
