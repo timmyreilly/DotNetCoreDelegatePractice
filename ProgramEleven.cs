@@ -6,12 +6,10 @@ class MainEleven
     static Random rand = new Random(); 
     static IEnumerable<int> GetRandomNumbers(int count)
     {
-        List<int> ints = new List<int>();
         for(int i = 0; i < count; i++){
-            ints.Add(rand.Next()); 
+            yield return rand.Next(); 
         }
 
-        return ints; 
     }
     
     static void Main(){
