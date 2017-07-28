@@ -18,10 +18,10 @@ static class MainTwelve{
     }
 
     class Cow{
-        static int numMoos; 
+        int numMoos; 
         public static void Moo(Cow _this){
-            numMoos++;
-            Console.WriteLine("Mooooo" + numMoos); 
+            _this.numMoos++;
+            Console.WriteLine("Mooooo" +_this.numMoos); 
         }
     }
 
