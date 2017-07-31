@@ -20,7 +20,7 @@ static class MainTwelve
         Console.WriteLine($"{combined} or {combined2}");
     }
 
-    static void Main()
+    static void MainB()
     {
         Cow2 c1 = new Cow2();
         Cow2 c2 = new Cow2();
